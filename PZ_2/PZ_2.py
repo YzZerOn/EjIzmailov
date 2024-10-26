@@ -4,7 +4,7 @@ def intcheck(x):
         try:
             x = int(x)
             return x
-        except:
+        except ValueError:
             print('Неправильный ввод числа!')
             x = input('Повторите попытку: ')
 a = input('Введите число A: ')
