@@ -1,10 +1,19 @@
-while True:
-    cel = int(input("Введите N>0: "))
-    if cel > 0:
-        break
-sum = 0
-for i in range(0,1000000):
-    sum += (cel+i)**2
-    if (cel+i) == 2*cel:
-        break
-print(sum)
+"""Вариант 10.
+Даны два целых числа: А, В. Проверить истинность высказывания: 
+«Ровно одно из чисел А и В нечетное»."""
+def intcheck(x):
+    while type(x) != int:
+        try:
+            x = int(x)
+            return x
+        except ValueError:
+            print('Неправильный ввод числа!')
+            x = input('Повторите попытку: ')
+
+A = intcheck(input("Введите целое число A"))
+B = intcheck(input("Введите целое число B"))
+
+if A+B % 2 != 0:
+    print("Одно из чисел нечётное")
+else:
+    print("Оба числа чётные/нечётные")
