@@ -13,7 +13,7 @@ def intcheck(x):
 A = intcheck(input("Введите целое число A"))
 B = intcheck(input("Введите целое число B"))
 
-if A+B % 2 != 0:
+if (A+B) % 2 != 0:
     print("Одно из чисел нечётное")
 else:
     print("Оба числа чётные/нечётные")
