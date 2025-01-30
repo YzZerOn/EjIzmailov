@@ -1,19 +1,17 @@
 """Вариант 10.
-Даны два целых числа: А, В. Проверить истинность высказывания: 
-«Ровно одно из чисел А и В нечетное»."""
-def intcheck(x):
-    while type(x) != int:
-        try:
-            x = int(x)
-            return x
-        except ValueError:
-            print('Неправильный ввод числа!')
-            x = input('Повторите попытку: ')
+Дано целое число N (> 0). Найти сумму N^2 + (N + 1)^2 + (N + 2)^2 + ... + (2N)^2"""
+while True:
+    try:
+        n = int(input("Введите целое число N (> 0): "))
+        if n > 0:
+            break
+        raise ValueError
+    except ValueError:
+        print("Некорректный ввод.")
 
-A = intcheck(input("Введите целое число A"))
-B = intcheck(input("Введите целое число B"))
-
-if A+B % 2 != 0:
-    print("Одно из чисел нечётное")
-else:
-    print("Оба числа чётные/нечётные")
+sum = 0
+for i in range(0,1000000):
+    sum += (n+i)**2
+    if (n+i) == 2*n:
+        break
+print("Сумма: ", sum)
